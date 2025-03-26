@@ -78,6 +78,9 @@ def cross_section_calculations_run():
             set Mtrch {mass}
             set mtr {mass}
             set mtrm {mass}
+            ## PDF ## here we use the NNPDF30_lo_as_0130 pdf set (following ATLAS Jopo)
+            set pdlabel lhapdf
+            set lhaid 263000  
             ### Mixings ###
             set ve 0
             set vm 0.063
@@ -90,8 +93,8 @@ def cross_section_calculations_run():
             set drjj 0.001
             set drll 0.0
             ### OTHER ###
-            set sde_strategy 1
-            set hard_survey 1
+            set sde_strategy 1  # Phase-Space Optimization strategy (integration strategy), 1 is for using using amp square
+            set hard_survey 1  # i don't know what is that
             """
             try:
                 run_mg5_command(commands)
